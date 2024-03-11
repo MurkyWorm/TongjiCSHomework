@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 标题(可修改) -->
+<title>我的盒子模型</title>
+<style>
+/* 源数据定义样式，将 div 元素的背景颜色设置为浅灰色，宽度为 300px，边框为 25px 的绿色，填充为 25px，外边距为 25px */
+/* 此处可以通过更改数字或者颜色来更改界面样式*/
+/* mine定义样式，将 div 元素的背景颜色设置为浅灰色，宽度为 300px，边框为 5px 的绿色，填充为 5px，外边距为 25px */
+
+div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 5px solid green;
+    padding: 5px;
+    margin: 25px;
+}
+/* p标签定义样式，字体设为"Times New Roman" 字体大小50px，字体颜色RGB值为255 0 0 红色 字体右对齐 */
+p{
+	font-family:"Times New Roman";
+	font-size: 50px;
+	color:rgb(255,0,0);
+	text-align:right;
+}
+</style>
+</head>
+<body>
+<!-- 添加标题(可修改) -->
+<h2>我的盒子模型演示</h2>
+<!-- 添加文本说明 -->
+<p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p>
+<!-- 添加一个 div 元素，用于展示盒子模型 -->
+<div>这里是盒子内的实际内容。有 5px 内间距，25px 外间距、5px 绿色边框。</div>
+</body>
+</html>

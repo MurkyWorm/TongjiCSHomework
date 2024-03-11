@@ -1,0 +1,23 @@
+指令种类：共15条，使用4位来表示
+
+寄存器个数：16个，使用4位来表示
+
+指令码格式：
+种类	操作码	op1	op2	op3	operation
+NOP	0000	0000	0000	0000	no operation
+HALT	0001	0000	0000	0000	halt
+ADD	0010	r1	r2	r3	r1 <- r2+r3
+ADDI	0011	r1	val1	val2	r1 <- r1+{val1,val2}
+SUB	0100	r1	r2	r3	r1 <- r2-r3
+SUBI	0101	r1	val1	val2	r1 <- r1-{val1,val2}
+SRL	0110	r1	r2	val	r1 <- r2>>val
+CMP	0111	0000	r2	r3	r2-r3 set cf,zf,nf
+JUMP	1000	0000	val1	val2	jump to {val1,val2}
+BN	1001	r1	val1	val2	jump to r1+{val1,val2} if nf==1
+BNN	1010	r1	val1	val2	jump to r1+{val1,val2} if nf==0
+BZ	1011	r1	val1	val2	jump to r1+{val1,val2} if zf==1
+BNZ	1100	r1	val1	val2	jump to r1+{val1,val2} if zf==0
+LOAD	1101	r1	r2	val	r1 <- dmem[r2+val]
+STORE	1110	r1	r2	val	r1 -> dmem[r2+val]
+
+

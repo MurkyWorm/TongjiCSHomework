@@ -1,0 +1,51 @@
+/*以下是播放列表相关样式*/
+#playListContainer {
+	position: absolute;
+	left: 102%;
+	top: 11%;
+	width: 15vw;
+	height: 40.5vw;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: rgba(230, 230, 230, 1);
+	border-radius: 5px;
+}
+ul {
+	list-style:none;
+	position: absolute;
+	left: 9%;
+	width: 12vw;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+li {
+	background-color: white;
+	left: -16%;
+	cursor: pointer;
+	padding: 0px;
+	margin: 0px;
+	border: 0.4vw;
+	border-style: solid;
+	border-color: rgba(230, 230, 230, 1);
+	font-size: 1.5vw;
+}
+#playListTitle {
+	position: absolute;
+	left: 102%;
+	top: 0%;
+	width: 14vw;
+	height: 3vw;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+	border: 0.5vw solid rgba(200, 200, 200, 1);
+	background-color: rgba(240, 240, 240, 1);
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5vw;
+}

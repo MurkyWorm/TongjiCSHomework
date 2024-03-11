@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/HOME.css' %}">
+</head>
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex align-items-center justify-content-between">
+        {% load static %}
+        <p id="user_id" style="display:none">{{ id }}</p>
+        <p id="choice" style="display:none">{{ choice }}</p>
+        <p id="value" style="display:none">{{ value }}</p>
+        <div class="d-flex align-items-center">
+            <img id="user_pp" src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#user_info" style="height: 10vw; width: 10vw;">
+            <span id="user_name"><b>{{ user_name }}</b></span>
+        </div>
+        <div class="ml-auto">
+            <span id="bars" class="fas fa-bars text-white" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding:0;margin:0;border:1;">
+                <li><a id="add_idea" class="dropdown-item border-bottom">添加博客</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container input-group">
+        <input id="search_cont" type="text" class="form-control" placeholder="输入搜索关键词...">
+        <div class="input-group-append">
+            <button id="search" class="btn btn-dark" type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    <div id="user_info" class="offcanvas offcanvas-start">
+        <div class="offcanvas-header bg-dark">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle border" style="height: 10vw; width: 10vw;">
+                <span style="color:white;font-size:5vw;"><b>&nbsp;&nbsp;{{ user_name }}</b></span>
+            </div>
+            <i id="message" class="far fa-envelope" style="color:white;font-size:6vw;"></i>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container d-flex align-items-center justify-content-between">
+                <span> </span>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div style="padding-right:7vw;">
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_blocks" style="font-size:5vw;cursor:pointer;"><b>我的博客:</b></span>
+                    <span>{{ user_ideas }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_fans" style="font-size:5vw;cursor:pointer;"><b>我的粉丝:</b></span>
+                    <span>{{ user_fan }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_likes" style="font-size:5vw;cursor:pointer;"><b>收获的赞:</b></span>
+                    <span>{{ user_like }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_reply" style="font-size:5vw;cursor:pointer;"><b>回复我的:</b></span>
+                    <span>{{ user_reply }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_concen" style="font-size:5vw;cursor:pointer;"><b>我的关注:</b></span>
+                    <span>{{ user_concen }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span id="my_coll" style="font-size:5vw;cursor:pointer;"><b>我的收藏:</b></span>
+                    <span>{{ user_coll }}</span>
+                </div>
+                <div class="container p-3 m-2 align-items-center border-top">
+                    <span style="font-size:5vw;"><b> </b></span>
+                </div>
+            </div>
+        </div>
+        <div class="container p-2 bg-dark">
+            <div style="padding-right:7vw;">
+                <span id="per_info" style="color:white;margin:4vw;cursor:pointer;"><b>管理个人信息</b></span>
+                <i class="fas fa-power-off  child-element float-end " data-bs-toggle="modal" data-bs-target="#myModal" style="color:white;margin-top:1.5vw;padding-left:20vw;"></i>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><b>退出登录</b></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    确定要退出登录吗？
+                </div>
+                <div class="modal-footer">
+                    <button id="exit" type="button" class="btn btn-dark">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="report_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p id="report_id" style="display:none"></p>
+                    <h4 id="report_title" class="modal-title"><b>举报</b></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="report_content" class="resizable-textarea" rows="8" cols="20" style="resize: both;overflow: auto;width: 100%;height: 100%padding: 0;margin: 0;border-top: 0;border-left: 0;border-right: 0;" placeholder="请输入举报内容"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button id="report_button" type="button" class="btn btn-dark">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="card" class="container" style="overflow-y:auto;height:77.6vh;padding-right:5vw;">
+        <template v-for="article in articles">
+            <div class="border-bottom card_parent" style="margin-left:3vw;margin-right:3w;margin-bottom:5vw;margin-top:3vw">
+                <i :class="{'far fa-bookmark':article[10]=='black','fas fa-bookmark':article[10]=='green'}"></i>
+                <p class="p_child" v-text="article[7]" style="display:none;"></p>
+                <span style="font-size:6vw">&nbsp;<b v-text="article[0]"></b></span>
+                <br>
+                <span style="font-size:4.5vw" v-text="article[2]"></span>
+                <br>
+                <div style="font-size:3vw">
+                    <span>浏览量:</span>
+                    <span v-text="article[3]"></span>
+                    <span>&nbsp;&nbsp;</span>
+                    <i :class="{'far fa-thumbs-up':article[8]=='black','fas fa-thumbs-up':article[8]=='green'}" v-text="':'+article[4]"></i>
+                    <span>&nbsp;&nbsp;</span>
+                    <i :class="{'far fa-thumbs-down':article[9]=='black','fas fa-thumbs-down':article[9]=='red'}" v-text="':'+article[5]"></i>
+                    <span>&nbsp;&nbsp;</span>
+                    <i class="far fa-comment">:</i>
+                    <span v-text="article[6]"></span>
+                    <span>&nbsp;&nbsp;</span>
+                    <i class="fas fa-exclamation-triangle" data-bs-toggle="modal" data-bs-target="#report_modal"></i>
+                    <span class="child-element float-end" v-text="article[1]"></span>
+                </div>
+            </div>
+        </template>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/HOME.js' %}"></script>
+</body>
+</html>

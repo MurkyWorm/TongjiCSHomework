@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/REG_LOG.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="container rounded-top pt-3 bg-dark d-flex justify-content-center">
+            <h2 id="title">{{ title|safe }}</h2>
+        </div>
+        <div id="form-body" class="container rounded-bottom p-3 justify-content-center">
+            <div class="d-flex justify-content-center">
+                <form action="/REG_LOG/reg_in/" method="post">
+                    {% csrf_token %}
+                    <div class="mt-1">
+                        <input class="form-control" id="user_name" placeholder="昵称" value="{{ user_name }}" name="user_name">
+                        <p class="error_mess">{{ name_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input type="password" class="form-control" id="user_pwd" placeholder="密码(8-16数字加字母)" value="{{ user_pwd }}" name="user_pwd">
+                        <p class="error_mess">{{ pwd_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input type="password" class="form-control" id="user_pwd2" placeholder="重复密码" value="{{ user_pwd2 }}" name="user_pwd2">
+                        <p class="error_mess">{{ pwd2_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input type="email" class="form-control" id="user_email" placeholder="电子邮件地址" value="{{ user_email }}" name="user_email">
+                        <p class="error_mess">{{ email_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="favor_movie" placeholder="一部喜爱的电影" value="{{ favor_movie }}" name="favor_movie">
+                        <p class="error_mess">{{ movie_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="favor_novel" placeholder="一本喜爱的书" value="{{ favor_novel }}" name="favor_novel">
+                        <p class="error_mess">{{ novel_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="favor_song" placeholder="一首喜爱的歌" value="{{ favor_song }}" name="favor_song">
+                        <p class="error_mess">{{ song_err }}&nbsp;</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-dark" style="width:100%;font-weight:bold">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+                    </div>
+                    <div class="mt-2">
+                        <p id="log">已有账户，去登录</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/REG.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<mxfile host="Electron" modified="2024-01-01T05:28:53.127Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="V2TUNrZ4wE9w1kPZqm6-" version="22.1.2" type="device">
+  <diagram name="第 1 页" id="IM1NXF9bw_wg9nJjO3C2">
+    <mxGraphModel dx="1700" dy="781" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AMW23YdhTXEw33alVsgH-1" value="普通用户" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-2" value="海洋环境管理人员" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-4" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="60" y="400" as="sourcePoint" />
+            <mxPoint x="670" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="60" y="540" />
+              <mxPoint x="670" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-5" value="获取相关信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-6" value="获取辐射影响范围" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="200" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-7" value="获取辐射严重程度" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-8" value="获取相关生态数据" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="400" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-9" value="发布信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="690" y="330" as="sourcePoint" />
+            <mxPoint x="810" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-11" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=-0.012;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="AMW23YdhTXEw33alVsgH-5" target="AMW23YdhTXEw33alVsgH-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="950" y="335" as="sourcePoint" />
+            <mxPoint x="1110" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-12" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="AMW23YdhTXEw33alVsgH-5" target="AMW23YdhTXEw33alVsgH-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="950" y="340" as="sourcePoint" />
+            <mxPoint x="1040" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-13" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="930" y="360" as="sourcePoint" />
+            <mxPoint x="1090" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-14" value="影响范围和严重程度" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="274" y="70" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-15" value="辐射预测" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="70" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-16" value="预警和建议" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="70" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-17" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=1.004;entryY=0.41;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-9">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="640" y="329" as="sourcePoint" />
+            <mxPoint x="810" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-18" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="490" y="300" as="sourcePoint" />
+            <mxPoint x="650" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-19" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-16">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="490" y="300" as="sourcePoint" />
+            <mxPoint x="650" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-20" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="490" y="300" as="sourcePoint" />
+            <mxPoint x="650" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-21" value="进行信息数据的分析" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="450" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-22" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-21">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="690" y="350" as="sourcePoint" />
+            <mxPoint x="850" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-23" value="浏览信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="400" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-24" value="检索信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-25" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.434;entryY=1.037;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.927;exitY=0.244;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="AMW23YdhTXEw33alVsgH-23" target="AMW23YdhTXEw33alVsgH-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="290" y="410" as="sourcePoint" />
+            <mxPoint x="460" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-27" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.31;entryY=0.933;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="430" as="sourcePoint" />
+            <mxPoint x="460" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-28" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-16">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="440" as="sourcePoint" />
+            <mxPoint x="460" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-29" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.26;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="230" y="280" as="sourcePoint" />
+            <mxPoint x="390" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-30" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="AMW23YdhTXEw33alVsgH-24" target="AMW23YdhTXEw33alVsgH-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="430" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-31" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.955;exitY=0.291;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="AMW23YdhTXEw33alVsgH-24" target="AMW23YdhTXEw33alVsgH-16">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="290" y="300" as="sourcePoint" />
+            <mxPoint x="450" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-32" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-24">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="90" y="330" as="sourcePoint" />
+            <mxPoint x="250" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AMW23YdhTXEw33alVsgH-33" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="AMW23YdhTXEw33alVsgH-23">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="90" y="350" as="sourcePoint" />
+            <mxPoint x="250" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

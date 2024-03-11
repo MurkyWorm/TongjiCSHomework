@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创作</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CREATION.css' %}">
+</head>
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <p id="creation_id" style="display:none">{{ creation_id }}</p>
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex align-items-center justify-content-between">
+        {% load static %}
+        <div class="d-flex align-items-center">
+            <img id="user_pp" src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#user_info" style="height: 10vw; width: 10vw;">
+            <span id="user_name"><b>{{ user_name }}</b></span>
+        </div>
+        <div class="ml-auto">
+            <i id="save" class="fa fa-save" style="color:white;font-size:6vw;" data-bs-toggle="modal" data-bs-target="#myModal"></i>
+            <span style="font-size:6vw;">&nbsp;&nbsp;</span>
+            <i id="publish" class="fas fa-paper-plane"  style="color:white;font-size:6vw;" data-bs-toggle="modal" data-bs-target="#myModal1"></i>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">保存</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    保存成功
+                </div>
+                <div class="modal-footer">
+                    <button id="exit" type="button" class="btn btn-dark" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">发布</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    发布成功
+                </div>
+                <div class="modal-footer">
+                    <button id="exit1" type="button" class="btn btn-dark" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="cont">
+            <textarea id="title" class="resizable-textarea" rows="2" cols="20" placeholder="请输入标题">{{ title }}</textarea>
+        </div>
+        <div class="cont">
+            <textarea id="introd" class="resizable-textarea" rows="8" cols="20" placeholder="请输入介绍">{{ introd }}</textarea>
+        </div>
+        <div class="cont">
+            <textarea id="content" class="resizable-textarea" rows="26" cols="20" placeholder="请输入正文内容">{{ content }}</textarea>
+        </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/CREATION.js' %}"></script>
+</body>
+</html>

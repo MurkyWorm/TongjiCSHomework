@@ -1,0 +1,35 @@
+#user_pp {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0px;
+    background-color: #f9f9f9;
+}
+#user_name {
+    color: white;
+    margin: 0;
+    padding: 2vw;
+    border: 0;
+    font-size: 4.5vw;
+}
+#title {
+    font-weight:bold;
+    font-size:6vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    display: flex;
+    justify-content: center;
+}
+#introd {
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+#content {
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+.underline-text {
+    border-bottom: 1px solid #dddddd;
+    line-height: 1.9;
+    word-wrap: break-word;
+    white-space: pre-line;
+}

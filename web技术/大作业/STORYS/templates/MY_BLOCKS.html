@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex align-items-center justify-content-between">
+        {% load static %}
+        <p id="user_id" style="display:none">{{ id }}</p>
+        <div class="d-flex align-items-center">
+            <img id="user_pp" src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#user_info" style="height: 10vw; width: 10vw;">
+            <span>&nbsp;</span>
+            <span id="user_name" style="color:white"><b>{{ user_name }}</b></span>
+        </div>
+        <span id="Return" class="fas fa-chevron-right text-white"></span>
+    </div>
+    <div id="card" class="container" style="overflow-y:auto;height:77.6vh;padding-right:5vw;">
+        <template v-for="article in articles">
+            <div class="border-bottom card_parent" style="margin-left:3vw;margin-right:3w;margin-bottom:5vw;margin-top:3vw">
+                <i :class="{'far fa-bookmark':article[10]=='black','fas fa-bookmark':article[10]=='green'}"></i>
+                <p class="p_child" v-text="article[7]" style="display:none;"></p>
+                <span style="font-size:6vw">&nbsp;<b v-text="article[0]"></b></span>
+                <br>
+                <span style="font-size:4.5vw" v-text="article[2]"></span>
+                <br>
+                <div style="font-size:3vw">
+                    <span>浏览量:</span>
+                    <span v-text="article[3]"></span>
+                    <span>&nbsp;&nbsp;</span>
+                    <i :class="{'far fa-thumbs-up':article[8]=='black','fas fa-thumbs-up':article[8]=='green'}" v-text="':'+article[4]"></i>
+                    <span>&nbsp;&nbsp;</span>
+                    <i :class="{'far fa-thumbs-down':article[9]=='black','fas fa-thumbs-down':article[9]=='red'}" v-text="':'+article[5]"></i>
+                    <span>&nbsp;&nbsp;</span>
+                    <i class="far fa-comment">:</i>
+                    <span v-text="article[6]"></span>
+                    <span>&nbsp;&nbsp;</span>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <i class="fas fa-trash-alt child-element float-end"></i>
+                    <span class="child-element float-end">&nbsp;</span>
+                    <i class="fas fa-edit child-element float-end"></i>
+                </div>
+            </div>
+        </template>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/MY_BLOCKS.js' %}"></script>
+</body>
+</html>

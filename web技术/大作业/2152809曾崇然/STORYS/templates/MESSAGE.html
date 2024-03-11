@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <p id="order" style="display:none">{{ order }}</p>
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex align-items-center justify-content-between">
+        {% load static %}
+        <p id="user_id" style="display:none">{{ id }}</p>
+        <div class="d-flex align-items-center">
+            <img id="user_pp" src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#user_info" style="height: 10vw; width: 10vw;">
+            <span>&nbsp;</span>
+            <span id="user_name" style="color:white"><b>{{ user_name }}</b></span>
+        </div>
+        <span id="Return" class="fas fa-chevron-right text-white"></span>
+    </div>
+    <div id="card" class="container" style="overflow-y:auto;height:77.6vh;padding-right:5vw;">
+        <template v-for="object in objects">
+            <div>
+                <div class="border-bottom" style="margin-left:3vw;margin-right:3vw;margin-bottom:5vw;margin-top:3vw;word-wrap: break-word;" v-text="object[0]"></div>
+                <button class="btn btn-dark check" type="button" v-text="object[1]"></button>
+                <span>&nbsp;</span>
+                <p class="id" style="display:none" v-text="object[2]"></p>
+                <button class="btn btn-dark delete" type="button">删除</button>
+            </div>
+        </template>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/MESSAGE.js' %}"></script>
+</body>
+</html>

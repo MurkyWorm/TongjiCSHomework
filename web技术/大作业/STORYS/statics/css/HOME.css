@@ -1,0 +1,16 @@
+#user_pp {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0px;
+    background-color: #f9f9f9;
+}
+#user_name {
+    color: white;
+    margin: 0;
+    padding: 2vw;
+    border: 0;
+    font-size: 4.5vw;
+}
+#bars {
+    font-size: 4.5vw;
+}

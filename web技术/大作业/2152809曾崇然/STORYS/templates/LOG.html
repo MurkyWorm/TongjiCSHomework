@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/REG_LOG.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="container rounded-top pt-3 bg-dark d-flex justify-content-center">
+            <h2 id="title">{{ title|safe }}</h2>
+        </div>
+        <div id="form-body" class="container rounded-bottom p-3 justify-content-center">
+            <div class="d-flex justify-content-center">
+                <form action="/REG_LOG/log_in/" method="post">
+                    {% csrf_token %}
+                    <input id="choice" value="all" name="choice" style="display:none">
+                    <input id="value" value="1" name="value" style="display:none">
+                    <input id="cantsee1" value="{{ is_collapsed }}" name="is_collapsed" style="display:none">
+                    <div class="mt-1">
+                        <input class="form-control" id="user_name" placeholder="昵称" value="{{ user_name }}" name="user_name">
+                        <p class="error_mess">{{ name_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input type="password" class="form-control" id="user_pwd" placeholder="密码(8-16数字加字母)" value="{{ user_pwd }}" name="user_pwd">
+                        <p class="error_mess">{{ pwd_err }}&nbsp;</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-dark" style="width:100%;font-weight:bold">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                    </div>
+                    <div class="mt-2">
+                        <p id="reg">没有账户，去注册</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container pb-2 pt-2 bg-dark d-flex justify-content-center align-items-center">
+            <p id="findpwd" data-bs-toggle="collapse" data-bs-target="#findbody">忘记密码？点我找回</p>
+        </div>
+        <div id="findbody" class="container collapse {% if is_collapsed %}show{% endif %} rounded-bottom p-3 justify-content-center">
+            <div class="d-flex justify-content-center">
+                <form action="/REG_LOG/find_pwd/" method="post">
+                    {% csrf_token %}
+                    <input id="cantsee" value="{{ is_collapsed }}" name="is_collapsed" style="display:none">
+                    <div class="mt-1">
+                        <input class="form-control" id="find_name" placeholder="昵称" value="{{ find_name }}" name="find_name">
+                        <p class="error_mess">{{ name_err1 }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="find_movie" placeholder="一部喜爱的电影" value="{{ find_movie }}" name="find_movie">
+                        <p class="error_mess">{{ movie_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="find_novel" placeholder="一本喜爱的书" value="{{ find_novel }}" name="find_novel">
+                        <p class="error_mess">{{ novel_err }}&nbsp;</p>
+                    </div>
+                    <div class="mt-1">
+                        <input class="form-control" id="find_song" placeholder="一首喜爱的歌" value="{{ find_song }}" name="find_song">
+                        <p class="error_mess">{{ song_err }}&nbsp;</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-dark" style="width:100%;font-weight:bold">找&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回</button>
+                    </div>
+                    <p id="find_pwd">{{ find_pwd }} </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/LOG.js' %}"></script>
+</body>
+</html>

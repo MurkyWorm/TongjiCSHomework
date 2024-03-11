@@ -1,0 +1,28 @@
+
+body{
+	width:300px;
+	height:500px;
+	position:relative;
+	background-image:url(bgimg.png);
+	background-size: auto;
+    background-repeat: no-repeat;
+}
+h1{
+	position:absolute;
+	top:21%;
+	left:17%;
+	color:white;
+	font-family:宋体;
+}
+div{
+	width: 250px;
+	height: 150px;
+	position:absolute;
+	top:45%;
+	left:12%;
+}
+p{
+	font-size:small;
+	font-weight:bold;
+	font-family:楷体;
+}

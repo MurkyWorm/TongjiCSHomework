@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/POCC/CP0/CP0.srcs/sources_1/new/CP0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CP0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/POCC/CP0/CP0.srcs/sources_1/new/CP0_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CP0_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/POCC/CP0/CP0.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

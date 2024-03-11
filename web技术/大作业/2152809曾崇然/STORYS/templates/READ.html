@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/READ.css' %}">
+</head>
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <p id="creation_id" style="display:none">{{ creation_id}}</p>
+    <p id="creator" style="display:none">{{ user_name }}</p>
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex align-items-center justify-content-between">
+        {% load static %}
+        <div class="d-flex align-items-center">
+            <img id="user_pp" src="{% static 'images/' %}{{ user_pp }}" class="rounded-circle" style="height: 10vw; width: 10vw;">
+            <span id="user_name"><b>{{ user_name }}</b></span>
+        </div>
+        <div class="ml-auto">
+            <i id="like" class="fas fa-thumbs-up"  style="color:{{ like }};font-size:4.5vw;"></i>
+            <span style="font-size:4.5vw;">&nbsp;&nbsp;</span>
+            <i id="dislike" class="fas fa-thumbs-down"  style="color:{{ dislike }};font-size:4.5vw;"></i>
+            <span style="font-size:4.5vw;">&nbsp;&nbsp;</span>
+            <i id="collection" class="fas fa-bookmark"  style="color:{{ coll }};font-size:4.5vw;"></i>
+            <span style="font-size:4.5vw;">&nbsp;&nbsp;</span>
+            <i id="book" class="fas fa-plus" style="color:{{ concen }};font-size:4.5vw;"></i>
+        </div>
+    </div>
+    <div id="body_cont" style="height: 77.8vh;overflow-y:auto;">
+        <div id="title">{{ title }}</div>
+        <div id="introd"><br><b>介绍:</b>{{ introd }}<br><br></div>
+        <div id="content"><b>正文:</b><br><span class="underline-text">{{ content }}</span></div>
+    </div>
+    <div class="container bg-dark pt-1 pb-1 mt-1 mb-1 d-flex justify-content-center align-items-center" data-bs-toggle="offcanvas" data-bs-target="#comments">
+        <i class="fas fa-angle-double-up fa-fw" style="color:white;font-size:6vw"></i>
+    </div>
+    <div class="offcanvas offcanvas-bottom" id="comments" style="height:60vh;">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title">&nbsp;评论区</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="card" style="height:39.8vh;overflow-y:auto;">
+                <template v-for="comment in comments">
+                    <div class="border-bottom card_parent" style="margin-left:3vw;margin-right:3w;margin-bottom:5vw;margin-top:3vw">
+                        <p style="display:none" v-text="comment[4]" class="p_child"></p>
+                        <b><span v-text="comment[0]"></span><span>:</span></b>
+                        <span>&nbsp;&nbsp;</span>
+                        <i :class="{'far fa-thumbs-up':comment[5]=='black','fas fa-thumbs-up':comment[5]=='green'}" v-text="':'+comment[2]">:</i>
+                         <span>&nbsp;&nbsp;</span>
+                        <i :class="{'far fa-thumbs-down':comment[6]=='black','fas fa-thumbs-down':comment[6]=='red'}" v-text="':'+comment[3]">:</i>
+                        <div v-text="comment[1]" style="word-wrap: break-word;"></div>
+                    </div>
+                </template>
+            </div>
+                <div class="container input-group">
+                    <input id="cc" type="text" class="form-control" placeholder="发表评论">
+                <div class="input-group-append">
+                    <button id="send_comment" class="btn btn-dark" type="button"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">发送评论</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    发送成功
+                </div>
+                <div class="modal-footer">
+                    <button id="exit" type="button" class="btn btn-dark" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/READ.js' %}"></script>
+</body>
+</html>

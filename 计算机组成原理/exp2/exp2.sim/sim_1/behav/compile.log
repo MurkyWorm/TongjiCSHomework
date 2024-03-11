@@ -1,0 +1,25 @@
+# do {DIV_tb_compile.do}
+# Model Technology ModelSim PE vmap 10.4c Lib Mapping Utility 2015.07 Jul 20 2015
+# vmap xil_defaultlib msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# 
+# Model Technology ModelSim PE vlog 10.4c Compiler 2015.07 Jul 20 2015
+# Start time: 16:34:22 on Apr 02,2023
+# vlog -64 -incr -work xil_defaultlib ../../../exp2.srcs/sources_1/new/DIV.v ../../../exp2.srcs/sources_1/new/DIV_tb.v 
+# -- Compiling module DIV
+# -- Compiling module DIV_tb
+# 
+# Top level modules:
+# 	DIV_tb
+# End time: 16:34:22 on Apr 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim PE vlog 10.4c Compiler 2015.07 Jul 20 2015
+# Start time: 16:34:22 on Apr 02,2023
+# vlog -work xil_defaultlib glbl.v 
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# End time: 16:34:22 on Apr 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="视频窗口.css"/>
+		<link rel="stylesheet" type="text/css" href="播放列表.css"/>
+	    <meta charset="UTF-8">
+	    <title>jing的视频播放器</title>
+	</head>
+	<body>
+	    <div id="videoContainer">
+			<!-- 该部分是视频窗口的元素 -->
+	        <video id="jingVideo" width="640" height="360">
+	            <source src="反叛的鲁路修/第1集.mp4" type="video/mp4">
+	            您的浏览器不支持HTML5视频。
+	        </video>
+			<div id="playButton">►</div>
+			
+			<div id="bottomShadow"></div>
+			
+			<div id="totalProgress"></div>
+			<div id="currentProgress"></div>
+			<p id="timeDisplay">00:00/00:00</p>
+			
+			<div id="bottomPlayButton">►</div>
+			
+			<div id="volumeButton">🔊</div>
+			<div id="volumeBack"></div>
+			<div id="volumeSpace"></div>
+			<div id="volumeStrip"></div>
+			
+			<div id="rateButton">倍速</div>
+			<div id="rateChoice1">&nbsp&nbsp2.0x</div>
+			<div id="rateChoice2">&nbsp&nbsp1.5x</div>
+			<div id="rateChoice3">&nbsp&nbsp1.25x</div>
+			<div id="rateChoice4">&nbsp&nbsp1.0x</div>
+			<div id="rateChoice5">&nbsp&nbsp0.75x</div>
+			<div id="rateChoice6">&nbsp&nbsp0.5x</div>
+			
+			<div id="fullScreenButton">⛶</div>
+			
+			<div id="playListContainer">
+				<ul>
+				    <li style="background-color: black;color: white;">第1集</li>
+				    <li>第2集</li>
+				    <li>第3集</li>
+				    <li>第4集</li>
+				    <li>第5集</li>
+					<li>第6集</li>
+					<li>第7集</li>
+					<li>第8集</li>
+					<li>第9集</li>
+					<li>第10集</li>
+					<li>第11集</li>
+					<li>第12集</li>
+					<li>第13集</li>
+					<li>第14集</li>
+					<li>第15集</li>
+					<li>第16集</li>
+					<li>第17集</li>
+					<li>第18集</li>
+					<li>第19集</li>
+					<li>第20集</li>
+					<li>第21集</li>
+					<li>第22集</li>
+					<li>第23集</li>
+					<li>第24集</li>
+				  </ul>
+			</div>
+			<div id="playListTitle"><b>反叛的鲁路修</b></div>
+	    </div>
+		<script src="视频窗口.js"></script>
+		<script src="播放列表.js"></script>
+	</body>
+</html>

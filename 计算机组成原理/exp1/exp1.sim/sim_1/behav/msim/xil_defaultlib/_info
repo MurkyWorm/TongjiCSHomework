@@ -1,0 +1,72 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/POCC/exp1/exp1.sim/sim_1/behav
+vglbl
+Z1 !s110 1679910932
+!i10b 1
+!s100 g=dL3UKAkhNRkQ:7=fPzF1
+IkJ@CGO[n5[_3E=ZkTzmEk2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1464879896
+8glbl.v
+Fglbl.v
+L0 6
+Z3 OP;L;10.4c;61
+r1
+!s85 0
+31
+Z4 !s108 1679910932.000000
+!s107 glbl.v|
+!s90 -work|xil_defaultlib|glbl.v|
+!i113 1
+Z5 o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vMULT
+R1
+!i10b 1
+!s100 c?XiU8R;NA>NH>><GS;m_2
+Ig3WU]Kk@eXFWPGP<UXZiA0
+R2
+R0
+w1679906991
+8../../../exp1.srcs/sources_1/new/MULT.v
+F../../../exp1.srcs/sources_1/new/MULT.v
+Z6 L0 23
+R3
+r1
+!s85 0
+31
+R4
+Z7 !s107 ../../../exp1.srcs/sources_1/new/MULT_tb.v|../../../exp1.srcs/sources_1/new/MULT.v|
+Z8 !s90 -64|-incr|-work|xil_defaultlib|../../../exp1.srcs/sources_1/new/MULT.v|../../../exp1.srcs/sources_1/new/MULT_tb.v|
+!i113 1
+R5
+n@m@u@l@t
+vMULT_tb
+R1
+!i10b 1
+!s100 ha;Qm33@VY][X>n[3:E^U3
+IP:Y<L74[i_`cG0QPKjHFn2
+R2
+R0
+w1679910269
+8../../../exp1.srcs/sources_1/new/MULT_tb.v
+F../../../exp1.srcs/sources_1/new/MULT_tb.v
+R6
+R3
+r1
+!s85 0
+31
+R4
+R7
+R8
+!i113 1
+R5
+n@m@u@l@t_tb

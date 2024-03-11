@@ -1,0 +1,241 @@
+<mxfile host="Electron" modified="2024-01-01T06:14:22.086Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="vjpVuLDyC465C25cOLSQ" version="22.1.16" type="device">
+  <diagram name="第 1 页" id="QTCNmBoPgRXdrAWXWvl8">
+    <mxGraphModel dx="1221" dy="823" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-1" value="渔业管理人员" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="300" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-2" value="渔业相关从业者" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="300" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-3" value="普通用户" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="480" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-5" value="获取相关信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="295" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-6" value="获取辐射影响范围" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="984" y="230" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-7" value="获取辐射严重程度" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="984" y="305" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-8" value="获取相关生态数据" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="984" y="380" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-9" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-1" target="jp_vJmDqAb9lGuRKd9mo-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="720" y="323" as="sourcePoint" />
+            <mxPoint x="775" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=-0.012;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-5" target="jp_vJmDqAb9lGuRKd9mo-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="980" y="328" as="sourcePoint" />
+            <mxPoint x="1140" y="328" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-11" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-5" target="jp_vJmDqAb9lGuRKd9mo-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="980" y="333" as="sourcePoint" />
+            <mxPoint x="1070" y="333" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-12" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.921;exitY=0.795;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-5" target="jp_vJmDqAb9lGuRKd9mo-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="960" y="353" as="sourcePoint" />
+            <mxPoint x="1120" y="353" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-13" value="发布渔业相关信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="295" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-14" value="某海域可从事的活动" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-15" value="相关注意和规范" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="150" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-16" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-13">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="670" y="330" as="sourcePoint" />
+            <mxPoint x="830" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-17" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-13">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="480" y="220" as="sourcePoint" />
+            <mxPoint x="640" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-18" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-13" target="jp_vJmDqAb9lGuRKd9mo-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="310" y="230" as="sourcePoint" />
+            <mxPoint x="470" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-19" value="管理注册的从业者" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="440" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-20" value="海产品管理" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="440" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-21" value="查看渔业相关信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="295" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-22" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="180" y="330" as="sourcePoint" />
+            <mxPoint x="260" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-23" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.276;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="jp_vJmDqAb9lGuRKd9mo-21" target="jp_vJmDqAb9lGuRKd9mo-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="310" y="300" as="sourcePoint" />
+            <mxPoint x="430" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-24" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.224;entryY=1.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="370" y="300" as="sourcePoint" />
+            <mxPoint x="530" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-25" value="渔业活动的申请和报备" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="95" y="160" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-26" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="160" y="290" as="sourcePoint" />
+            <mxPoint x="160" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-27" value="检举和投诉" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="95" y="610" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-28" value="检举产品" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="740" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-29" value="检举从业人员" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="740" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-30" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-27">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="165" y="570" as="sourcePoint" />
+            <mxPoint x="320" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-31" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="160" y="680" as="sourcePoint" />
+            <mxPoint x="160" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-32" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.352;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-28">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="170" y="680" as="sourcePoint" />
+            <mxPoint x="330" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-34" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="160" y="470" as="sourcePoint" />
+            <mxPoint x="160" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-35" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="190" y="500" as="sourcePoint" />
+            <mxPoint x="660" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-36" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.571;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-19">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="680" y="380" as="sourcePoint" />
+            <mxPoint x="850" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-37" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-20">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="720" y="380" as="sourcePoint" />
+            <mxPoint x="860" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-38" value="检查并登记" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="600" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-39" value="下架" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="600" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-40" value="查看产品相关信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="610" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-41" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.419;entryY=-0.048;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-40">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="190" y="530" as="sourcePoint" />
+            <mxPoint x="350" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-42" value="修改信息" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="700" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-43" value="extends" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-38">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="800" y="700" as="sourcePoint" />
+            <mxPoint x="960" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-45" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-38">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="800" y="510" as="sourcePoint" />
+            <mxPoint x="960" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-46" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.433;entryY=-0.057;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-39">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="820" y="510" as="sourcePoint" />
+            <mxPoint x="980" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-47" value="处理申请" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="550" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-48" value="封禁和处罚" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="550" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-49" value="批准" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="710" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-50" value="驳回" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="710" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-51" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-49">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="500" y="620" as="sourcePoint" />
+            <mxPoint x="660" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-52" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.37;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-50">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="520" y="620" as="sourcePoint" />
+            <mxPoint x="680" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-53" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.395;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-47">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="550" y="510" as="sourcePoint" />
+            <mxPoint x="710" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jp_vJmDqAb9lGuRKd9mo-54" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.448;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="jp_vJmDqAb9lGuRKd9mo-48">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="510" as="sourcePoint" />
+            <mxPoint x="740" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

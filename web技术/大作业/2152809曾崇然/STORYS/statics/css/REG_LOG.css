@@ -1,0 +1,32 @@
+#title {
+    font-weight: bold;
+    color: white;
+}
+.error_mess {
+    font-size:0.7em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: red;
+}
+#reg {
+	font-size:0.7em;
+	cursor: pointer;
+}
+#log {
+	font-size:0.7em;
+	cursor: pointer;
+}
+#findpwd {
+    margin: 0;
+    padding: 0;
+    border: 0;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	font-size:0.5em;
+}
+#find_pwd {
+    font-weight: bold;
+    font-size: 0.7em;
+}

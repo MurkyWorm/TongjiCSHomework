@@ -1,0 +1,144 @@
+0	ADDI r1 0 a//totalFloors
+1	ADDI r2 0 2 //fallResisitance
+
+2	ADDI r3 0 0//result
+3	ADDI r4 0 0//count
+4	ADDI r5 0 0//totalEggs
+5	ADDI r6 0 0//isBroken
+6	ADDI r7 0 0//value
+
+7	ADD r8 r0 r1//high
+8	ADDI r9 0 1//low
+9	ADDI r10 0 0//stumbFloor
+10	NOP
+
+11	ADDI r4 0 1//count++
+12	ADD r10 r8 r9
+13	NOP
+14	NOP
+15	NOP
+16	SRL r10 r10 1//stumbFloor = (high + low) / 2;
+17	SUB r11 r8 r9
+18	NOP
+19	NOP
+20	NOP
+21	SRL r11 r11 1
+22	NOP
+23	NOP
+24	NOP
+25	ADD r7 r7 r11//value = value + (high - low) / 2;
+
+26	CMP r2 r10
+27	BN r0 2 9
+28	NOP
+29	NOP
+30	NOP//if (stumbFloor <= fallResistance)
+
+31	SUB r6 r6 r6
+32	NOP
+33	NOP
+34	NOP
+35	ADDI r6 0 0//isBroken = 0;
+36	ADD r9 r0 r10//low = stumbFloor;
+37	JUMP 3 7
+38	NOP
+39	NOP
+40	NOP
+
+41	SUB r6 r6 r6
+42	NOP
+43	NOP
+44	NOP
+45	ADDI r6 0 1//isBroken = 1;
+46	ADDI r5 0 1//totalEggs++;
+47  	ADD r8 r0 r10
+48	NOP
+49	NOP
+50	NOP
+51	SUBI r8 0 1//high = stumbFloor - 1;
+52	NOP
+53	NOP
+54	NOP
+
+55	SUB r11 r8 r9
+56	SUB r12 r12 r12
+57	NOP
+58	NOP
+59	NOP
+60	ADDI r12 0 2
+61	NOP
+62	NOP
+63	NOP
+64	CMP r11 r12//if ((high - low) < 2)
+65	BN r0 4 9
+66	NOP
+67	NOP
+68	NOP//break
+69	JUMP 0 b
+70	NOP
+71	NOP
+72	NOP
+
+73	CMP r8 r9
+74	BNZ r0 5 3
+75	NOP
+76	NOP
+77	NOP//if (high == low)
+78	ADD r3 r0 r8//result = high;
+79	JUMP 6 c
+80	NOP
+81	NOP
+82	NOP
+
+83	ADDI r4 0 1//count++
+84	CMP r2 r8
+85	BN r0 6 3
+86	NOP
+87	NOP
+88	NOP//if (high <= fallResistance)
+
+89	SUB r6 r6 r6
+90	NOP
+91	NOP
+92	NOP
+93	ADDI r6 0 0//isBroken = 0;
+94	ADD r3 r0 r8//result = high;
+95	JUMP 6 c
+96	NOP
+97	NOP
+98	NOP
+
+99	SUB r6 r6 r6
+100	NOP
+101	NOP
+102	NOP
+103	ADDI r6 0 1//isBroken = 1;
+104	ADDI r5 0 1//totalEggs++;
+105	ADD r3 r0 r9//result = high;
+
+106	NOP
+107	NOP
+108	ADD r7 r7 r5
+109	NOP
+110	NOP
+111	NOP
+112	ADD r7 r7 r5
+113	NOP
+114	NOP
+115	NOP
+116	ADD r7 r7 r5
+117	NOP
+118	NOP
+119	NOP
+120	ADD r7 r7 r5
+121	NOP
+122	NOP
+123	NOP
+124	ADD r7 r7 r5//value = value + totalEggs * 5;
+
+125	STORE r3 r0 0
+126	STORE r4 r0 1
+127	STORE r5 r0 2
+128	STORE r6 r0 3
+129	STORE r7 r0 4
+130	HALT

@@ -1,0 +1,41 @@
+.carousel,
+.carousel img {
+    width: 100%;
+    height: 300px!important;
+}
+
+#carousel-example-generic {
+    border: 1px solid #000; /* 设置边框颜色和宽度 */
+    border-radius: 10px; /* 设置边框圆角的大小 */
+    overflow: hidden; /* 防止图片溢出轮播图容器 */
+}
+
+.carousel-inner .item img {
+    display: block; /* 确保图片块级显示，消除底部空间 */
+    width: 100%; /* 使图片宽度填满容器 */
+    height: auto; /* 保持图片高度自动，以保持图像比例 */
+}
+
+.carousel-caption {
+    top: 5px;       /* 距顶部10px */
+    z-index: 10;      /* 确保文本在图片之上 */
+    width: auto;      /* 自动宽度，根据内容调整 */
+}
+
+.carousel-caption h3 {
+    font-weight: bold; /* 加粗字体 */
+    color: white;      /* 字体颜色为白色 */
+    margin: 0;         /* 移除外边距 */
+    font-size: 24px;
+}
+
+#carousel-example-generic .carousel-inner .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%; /* 渐变覆盖到图片的上半部分 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    z-index: 10; /* 确保在图片下，文字上 */
+}

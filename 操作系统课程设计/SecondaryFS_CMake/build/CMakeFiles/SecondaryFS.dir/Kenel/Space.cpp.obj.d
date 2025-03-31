@@ -1,0 +1,25 @@
+CMakeFiles/SecondaryFS.dir/Kenel/Space.cpp.obj: \
+ D:\courses\OSCourseDesign\SecondaryFS\SecondaryFS_CMake\Kenel\Space.cpp \
+ D:/courses/OSCourseDesign/SecondaryFS/SecondaryFS_CMake/includes/Space.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/stdlib.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/cstdlib \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/Users/20930/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/Users/20930/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/std_abs.h

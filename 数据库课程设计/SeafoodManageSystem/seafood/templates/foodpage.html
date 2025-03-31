@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>海产页</title>
+    <link rel="stylesheet" href="{% static 'css/foodpage.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="page-header">
+                    <h1>晴海导航 <small>精准检索，放心食用每一口海产</small></h1>
+                </div>
+                <div class="container" style="padding: 0px;">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <ul class="nav nav-pills" style="margin-bottom: 15px;">
+                                <li role="presentation"><a href="/home/homepage"><b>主&nbsp;&nbsp;&nbsp;&nbsp;页</b></a>
+                                </li>
+                                <li role="presentation" class="active"><a href="/seafood/foodpage"><b>海&nbsp;&nbsp;&nbsp;&nbsp;产</b></a></li>
+                                <li role="presentation"><a href="/aihelper/helperpage"><b>智&nbsp;能&nbsp;助&nbsp;手</b></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="dropdown" style="text-align: right;margin-right: 20px;">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                    style="border: 0px;">
+                                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"
+                                        style="font-size: 20px;"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                    {% if identity %}
+                                    <li><a href="/user/logout">退出登录</a></li>
+                                    {% else %}
+                                    <li><a href="/user/login">登录</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid" style="margin-top: 5px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <a class="navbar-brand" href="#">海产列表</a>
+                                    </div>
+
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                    aria-haspopup="true" aria-expanded="false" id="timeDropdown">按时间 <span
+                                                        class="caret"></span></a>
+                                                <ul class="dropdown-menu" aria-labelledby="timeDropdown">
+                                                    <li><a>今天</a></li>
+                                                    <li><a>本周</a></li>
+                                                    <li><a>本月</a></li>
+                                                    <li><a>今年</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li><a>全部</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                    aria-haspopup="true" aria-expanded="false" id="statusDropdown">按状态 <span
+                                                        class="caret"></span></a>
+                                                <ul class="dropdown-menu" aria-labelledby="statusDropdown">
+                                                    <li><a>已售出</a></li>
+                                                    <li><a>未售出</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li><a>全部</a></li>
+                                                </ul>
+                                            </li>
+                                            <form class="navbar-form navbar-left" action="/seafood/filter/" method="post" style="padding-right: 0px;">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="productType" placeholder="输入产品种类名">
+                                                </div>
+                                                <input type="hidden" name="timeFilter" value='全部' id="timeFilterjing">
+                                                <input type="hidden" name="statusFilter" value='全部' id="statusFilterjing">
+                                                <button type="submit" class="btn btn-default">筛选</button>
+                                            </form>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>种类名称</th>
+                                            <th>数量 (kg)</th>
+                                            <th>经度</th>
+                                            <th>纬度</th>
+                                            <th>生产日期</th>
+                                            <th>过期日期</th>
+                                            <th>状态</th>
+                                        </tr>
+                                    </thead>
+                                    {{ response_data|json_script:"response_data" }}
+                                    <tbody id="productTable">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination" id="pagination">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="container-fluid" style="padding-top: 40px; padding-left: 0px;padding-right: 0px;">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="jumbotron">
+                                <div class="container">
+                                    <center>
+                                        <p>Copyright© 2024 All Rights Reserved. </p>
+                                        <p>同济大学--电子与信息工程学院计算机系</p>
+                                        地址：同济大学嘉定校区，上海市嘉定区曹安公路4800号&nbsp;&nbsp;&nbsp; 邮编：201802&nbsp;&nbsp;&nbsp;
+                                        电话:13699406180
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/foodpage.js' %}"></script>
+</body>
+
+</html>

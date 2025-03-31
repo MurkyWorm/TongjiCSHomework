@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3eswsjkBYptScj4OIZDgJWr8I7WRxzD6"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="{% static 'plugins/bootstrap-datepicker-1.9.0/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datepicker-1.9.0/locales/bootstrap-datepicker.zh-CN.min.js' %}"></script>
+    <link href="{% static 'plugins/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="page-header">
+                    <h1>晴海导航 <small>精准检索，放心食用每一口海产</small></h1>
+                </div>
+                <div class="container" style="padding: 0px;">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <ul class="nav nav-pills" style="margin-bottom: 15px;">
+                                <li role="presentation" class="active"><a><b>主&nbsp;&nbsp;&nbsp;&nbsp;页</b></a></li>
+                                <li role="presentation"><a href="/seafood/foodpage"><b>海&nbsp;&nbsp;&nbsp;&nbsp;产</b></a></li>
+                                <li role="presentation"><a href="/aihelper/helperpage"><b>智&nbsp;能&nbsp;助&nbsp;手</b></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="dropdown" style="text-align: right;margin-right: 20px;">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="true" style="border: 0px;">
+                                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" style="font-size: 20px;"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                    {% if identity %}
+                                    <li><a href="/user/logout">退出登录</a></li>
+                                    {% else %}
+                                    <li><a href="/user/login">登录</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid" style="padding: 10px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <div class="carousel-inner" role="listbox">
+                                    {% for notice in notices %}
+                                    <div class="item {% if forloop.first %}active{% endif %}">
+                                        <img src="{% static 'img/notice_img/'|add:notice.pic_url %}" alt="...">
+                                        <div class="carousel-caption">
+                                            <h3>{{ notice.title }}</h3>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                                <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                                    data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                                    data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-right: 25px;padding-left: 25px;margin-top: 10px;">
+                    <div class="row">
+                        {{ radiation|json_script:"radiation" }}
+                        <span style="font-size:14px;">显示辐射图:</span><input type="checkbox" onclick="toggle();" checked="checked" /></br>
+                        <input class="col-md-12" type="text" id="inputDate" class="form-control" placeholder="请选择日期">
+                        <div class="col-md-12" id="container"
+                            style="padding: 0px;border-radius: 5px;border: 1px solid #000;overflow: hidden;width: 100%;height: 600px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-right: 25px;padding-left: 25px; margin-top: 10px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">沿海城市污染程度</div>
+                                <table class="table" id="city_list">
+                                    <thead>
+                                        <tr>
+                                            <th>城市</th>
+                                            <th>污染程度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-offset-1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <ul class="nav nav-tabs">
+                                        <li role="presentation" class="active" id="tabCity"><a>按城市</a></li>
+                                        <li role="presentation" id="tabTime"><a>按时间</a></li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body">
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="container-fluid" style="padding-top: 40px; padding-left: 0px;padding-right: 0px;">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="jumbotron">
+                                <div class="container">
+                                    <center>
+                                        <p>Copyright© 2024 All Rights Reserved. </p>
+                                        <p>同济大学--电子与信息工程学院计算机系</p>
+                                        地址：同济大学嘉定校区，上海市嘉定区曹安公路4800号&nbsp;&nbsp;&nbsp; 邮编：201802&nbsp;&nbsp;&nbsp;
+                                        电话:13699406180
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% csrf_token %}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var csrftoken = $('[name=csrfmiddlewaretoken]').val();
+        const ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['海口', '香港', '厦门', '台北', '温州', '上海'],
+                    datasets: [{
+                        label: '# 辐射程度',
+                        data: [0, 0, 0, 0, 0, 0],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        const ctx2 = document.getElementById('myChart2');
+        var myChart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7', 'day8', 'day9', 'day10'],
+                    datasets: [{
+                        label: '# 辐射程度',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        borderWidth: 1,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)', // 线条颜色
+                        tension: 0.1 // 线条平滑度
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+        var jsonString = JSON.parse(document.getElementById('radiation').textContent);
+        var points = JSON.parse(jsonString);
+
+        var map = new BMap.Map('container'); // 创建Map实例
+        map.centerAndZoom(new BMap.Point(100, 40), 4); // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+
+        map.addEventListener("click", function(e) {
+            var lat = e.point.lat; // 获取点击位置的纬度
+            var lng = e.point.lng; // 获取点击位置的经度
+
+            // 使用 jQuery 发送 AJAX 请求
+            $.ajax({
+                url: "/home/changelocation/", // 后端接收数据的 URL
+                type: "POST",
+                data: {
+                    csrfmiddlewaretoken: csrftoken,
+                    latitude: lat,
+                    longitude: lng
+                },
+                success: function(response) {
+                    response.forEach(function(item, index) {
+                        myChart2.data.datasets[0].data[index] = response[index].count;
+                        myChart2.update();
+                    });
+                    console.log(myChart2.data.datasets[0].data);
+                    console.log("Server Response: ", response);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error occurred: ", error);
+                }
+            });
+        });
+
+        if (!isSupportCanvas()) {
+            alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
+        }
+
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({ "radius": 10 });
+        map.addOverlay(heatmapOverlay);
+        heatmapOverlay.setDataSet({ data: points, max: 300 });
+
+        function toggle() {
+            heatmapOverlay.toggle()
+        }
+
+        function isSupportCanvas() {
+            var elem = document.createElement('canvas');
+            return !!(elem.getContext && elem.getContext('2d'));
+        }
+
+        var myGeo = new BMap.Geocoder();
+
+        var cities =  ['海口', '香港', '厦门', '台北', '温州', '上海']
+        var tbody = document.getElementById('city_list').getElementsByTagName('tbody')[0];
+        function getNearestRad(point, points) {
+            let nearestCount = null;
+            let minDistance = Infinity; // 初始化一个非常大的值作为比较基准
+
+            for (let i = 0; i < points.length; i++) {
+                // 计算每个点的经纬度和
+                let currentSum = points[i].lat + points[i].lng;
+                let inputSum = point.lat + point.lng;
+
+                // 计算与当前位置的“距离”（即差值的绝对值）
+                let distance = Math.abs(currentSum - inputSum);
+
+                // 如果这个“距离”更小，更新最近温度
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearestCount = points[i].count;
+                }
+            }
+
+            return nearestCount;
+        }
+
+        cities.forEach(function(city, index) {
+            myGeo.getPoint(city, function(point) {
+                if (point) {
+                    var row = tbody.insertRow(); // 在tbody中插入一行
+                    var cell2 = row.insertCell(0); // 插入城市名称单元格
+                    var cell3 = row.insertCell(1); // 插入描述单元格
+                    cell2.innerHTML = cities[index]; // 设置城市名称
+                    let count = getNearestRad(point, points);
+                    myChart.data.datasets[0].data[index] = count;
+                    myChart.update();
+                    if (count < 0) {
+                        cell3.innerHTML = '轻';
+                    }
+                    else if (count >= 0 && count < 100) {
+                        cell3.innerHTML = '中';
+                    }
+                    else {
+                        cell3.innerHTML = '重';
+                    }
+                } else {
+                    console.log(city + " 的坐标无法解析");
+                }
+            }, "中国");
+        });
+
+        $(document).ready(function() {
+            $("#inputDate").datepicker({
+                language: 'zh-CN',
+                autoclose: true,
+                clearBtn: true,
+                format: "yyyy-mm-dd"
+            }).on('changeDate', function(e) {
+                // e.date contains the selected date
+                $.ajax({
+                    url: '/home/changedate/',  // 修改为你的服务器端点
+                    method: 'POST',
+                    data: { 
+                        csrfmiddlewaretoken: csrftoken,
+                        date: e.format('yyyy-mm-dd') 
+                    },
+                    success: function(response) {
+                        // 处理响应
+                        points = response.radiation;
+                        heatmapOverlay.setDataSet({ data: points, max: 300 });
+                        tbody.innerHTML = '';
+                        cities.forEach(function(city, index) {
+                            myGeo.getPoint(city, function(point) {
+                                if (point) {
+                                    var row = tbody.insertRow(); // 在tbody中插入一行
+                                    var cell2 = row.insertCell(0); // 插入城市名称单元格
+                                    var cell3 = row.insertCell(1); // 插入描述单元格
+                                    cell2.innerHTML = cities[index]; // 设置城市名称
+                                    let count = getNearestRad(point, points);
+                                    myChart.data.datasets[0].data[index] = count;
+                                    myChart.update();
+                                    if (count <= 0) {
+                                        cell3.innerHTML = '轻';
+                                    }
+                                    else if (count > 0 && count < 100) {
+                                        cell3.innerHTML = '中';
+                                    }
+                                    else {
+                                        cell3.innerHTML = '重';
+                                    }
+                                } else {
+                                    console.log(city + " 的坐标无法解析");
+                                }
+                            }, "中国");
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // 处理错误
+                        console.error('Error sending request', textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabCity = document.getElementById('tabCity');
+            var tabTime = document.getElementById('tabTime');
+            var cityComponent = document.getElementById('myChart');
+            var timeComponent = document.getElementById('myChart2');
+
+            cityComponent.style.display = 'block';
+            timeComponent.style.display = 'none';
+            tabCity.classList.add('active');
+            tabTime.classList.remove('active');
+
+            tabCity.addEventListener('click', function() {
+                cityComponent.style.display = 'block';
+                timeComponent.style.display = 'none';
+                tabCity.classList.add('active');
+                tabTime.classList.remove('active');
+            });
+
+            tabTime.addEventListener('click', function() {
+                timeComponent.style.display = 'block';
+                cityComponent.style.display = 'none';
+                tabTime.classList.add('active');
+                tabCity.classList.remove('active');
+            });
+    });
+        
+    </script>
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

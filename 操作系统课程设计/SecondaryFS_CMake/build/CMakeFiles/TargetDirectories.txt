@@ -1,0 +1,3 @@
+D:/courses/OSCourseDesign/SecondaryFS/SecondaryFS_CMake/build/CMakeFiles/SecondaryFS.dir
+D:/courses/OSCourseDesign/SecondaryFS/SecondaryFS_CMake/build/CMakeFiles/edit_cache.dir
+D:/courses/OSCourseDesign/SecondaryFS/SecondaryFS_CMake/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/user.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="form-container" style="padding-top: 5px">
+        <h3 class="text-center bg-primary text-white" style="padding: 6px;font-weight: bold;border-radius: 3px;">注册</h3>
+        <form class='px-5 py-3 bg-white' action="/user/register/" method="post">
+            {% if message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="form-group">
+                {{ register_form.user_name.label_tag }}
+                {{ register_form.user_name }}
+            </div>
+            <div class="form-group">
+                {{ register_form.password1.label_tag }}
+                {{ register_form.password1 }}
+            </div>
+            <div class="form-group">
+                {{ register_form.password2.label_tag }}
+                {{ register_form.password2 }}
+            </div>
+            <div class="form-group">
+                {{ register_form.email.label_tag }}
+                {{ register_form.email }}
+            </div>
+            <div class="form-group">
+                {{ register_form.captcha.errors }}
+                {{ register_form.captcha.label_tag }}
+                {{ register_form.captcha }}
+            </div>
+            <div class="pt-3">
+                <p class="text-center m-0"><button type="submit" class="btn btn-primary btn-block mb-5">立即注册</button></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
